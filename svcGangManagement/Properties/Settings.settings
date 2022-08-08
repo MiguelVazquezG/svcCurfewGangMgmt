@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="svcGangManagement.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AppLevel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Q</Value>
+    </Setting>
+    <Setting Name="SMTPServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Engineering.nscorp.com</Value>
+    </Setting>
+    <Setting Name="EngSysEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Engineering.Systems@nscorp.com</Value>
+    </Setting>
+    <Setting Name="Version" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1.0.0.0</Value>
+    </Setting>
+    <Setting Name="OverrideEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">miguel.vazquez@nscorp.com</Value>
+    </Setting>
+    <Setting Name="AdminEmail" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">frank.mcgowan3@nscorp.com;karyn.thomas@nscorp.com, miguel.vazquez@nscorp.com</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

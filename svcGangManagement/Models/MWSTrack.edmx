@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MWSTRackModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Gangs">
+          <Key>
+            <PropertyRef Name="GangID" />
+          </Key>
+          <Property Name="GangID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gang" Type="varchar" MaxLength="30" />
+          <Property Name="Supervisor" Type="varchar" MaxLength="35" />
+          <Property Name="Store" Type="varchar" MaxLength="5" />
+          <Property Name="Rin" Type="varchar" MaxLength="5" />
+          <Property Name="Func" Type="varchar" MaxLength="4" />
+          <Property Name="Afe" Type="varchar" MaxLength="4" />
+          <Property Name="GangTypeID" Type="int" />
+          <Property Name="SwitchStore" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="GangTypes">
+          <Key>
+            <PropertyRef Name="GangTypeID" />
+          </Key>
+          <Property Name="GangTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GangType" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityContainer Name="MWSTRackModelStoreContainer">
+          <EntitySet Name="Gangs" EntityType="Self.Gangs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GangTypes" EntityType="Self.GangTypes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MWSTRackModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GangType">
+          <Key>
+            <PropertyRef Name="GangTypeID" />
+          </Key>
+          <Property Name="GangTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GangType1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="MWSTRackEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GangTypes" EntityType="Self.GangType" />
+          <EntitySet Name="Gangs" EntityType="MWSTRackModel.Gangs" />
+        </EntityContainer>
+        <EntityType Name="Gangs">
+          <Key>
+            <PropertyRef Name="GangID" />
+          </Key>
+          <Property Name="GangID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gang" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Supervisor" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="Store" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Rin" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Func" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Afe" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="GangTypeID" Type="Int32" />
+          <Property Name="SwitchStore" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MWSTRackModelStoreContainer" CdmEntityContainer="MWSTRackEntities">
+          <EntitySetMapping Name="GangTypes">
+            <EntityTypeMapping TypeName="MWSTRackModel.GangType">
+              <MappingFragment StoreEntitySet="GangTypes">
+                <ScalarProperty Name="GangTypeID" ColumnName="GangTypeID" />
+                <ScalarProperty Name="GangType1" ColumnName="GangType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gangs">
+            <EntityTypeMapping TypeName="MWSTRackModel.Gangs">
+              <MappingFragment StoreEntitySet="Gangs">
+                <ScalarProperty Name="SwitchStore" ColumnName="SwitchStore" />
+                <ScalarProperty Name="GangTypeID" ColumnName="GangTypeID" />
+                <ScalarProperty Name="Afe" ColumnName="Afe" />
+                <ScalarProperty Name="Func" ColumnName="Func" />
+                <ScalarProperty Name="Rin" ColumnName="Rin" />
+                <ScalarProperty Name="Store" ColumnName="Store" />
+                <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+                <ScalarProperty Name="Gang" ColumnName="Gang" />
+                <ScalarProperty Name="GangID" ColumnName="GangID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

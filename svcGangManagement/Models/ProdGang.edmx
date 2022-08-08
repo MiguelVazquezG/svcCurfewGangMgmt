@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProdGangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Gang_Type">
+          <Key>
+            <PropertyRef Name="Gang_Type_Code" />
+          </Key>
+          <Property Name="Gang_Type_Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gang_Type" Type="varchar" MaxLength="35" />
+          <Property Name="Gang_Prefix" Type="varchar" MaxLength="5" />
+          <Property Name="MPVariance" Type="float" />
+          <Property Name="Order" Type="int" />
+        </EntityType>
+        <EntityType Name="Gangs">
+          <Key>
+            <PropertyRef Name="Gang_#" />
+          </Key>
+          <Property Name="Gang_#" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Gang_Type_Code" Type="int" />
+          <Property Name="Supervisor" Type="int" />
+          <Property Name="Division" Type="int" />
+          <Property Name="Gang_Number" Type="int" />
+          <Property Name="Lunch" Type="real" />
+          <Property Name="Men_Authorized" Type="smallint" />
+          <Property Name="upsize_ts" Type="datetime" />
+          <Property Name="GangType" Type="int" />
+          <Property Name="RIN" Type="int" />
+          <Property Name="HardStop" Type="bit" />
+        </EntityType>
+        <EntityType Name="ThermiteWelding_JsonDataLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JsonData" Type="varchar(max)" />
+          <Property Name="Source" Type="varchar" MaxLength="50" />
+          <Property Name="RequestType" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="Method" Type="varchar(max)" />
+        </EntityType>
+        <Function Name="stpGetGangSupervisorInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="gangid" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="ProdGangModelStoreContainer">
+          <EntitySet Name="Gang_Type" EntityType="Self.Gang_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gangs" EntityType="Self.Gangs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThermiteWelding_JsonDataLog" EntityType="Self.ThermiteWelding_JsonDataLog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProdGangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Gang_Type">
+          <Key>
+            <PropertyRef Name="Gang_Type_Code" />
+          </Key>
+          <Property Name="Gang_Type_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gang_Type1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="Gang_Prefix" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="MPVariance" Type="Double" />
+          <Property Name="Order" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Gang">
+          <Key>
+            <PropertyRef Name="Gang__" />
+          </Key>
+          <Property Name="Gang__" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Gang_Type_Code" Type="Int32" />
+          <Property Name="Supervisor" Type="Int32" />
+          <Property Name="Division" Type="Int32" />
+          <Property Name="Gang_Number" Type="Int32" />
+          <Property Name="Lunch" Type="Single" />
+          <Property Name="Men_Authorized" Type="Int16" />
+          <Property Name="upsize_ts" Type="DateTime" Precision="3" />
+          <Property Name="GangType" Type="Int32" />
+          <Property Name="RIN" Type="Int32" />
+          <Property Name="HardStop" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="ProdGangEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Gang_Type" EntityType="Self.Gang_Type" />
+          <EntitySet Name="Gangs" EntityType="Self.Gang" />
+          <EntitySet Name="ThermiteWelding_JsonDataLog" EntityType="ProdGangModel.ThermiteWelding_JsonDataLog" />
+          <FunctionImport Name="stpGetGangSupervisorInfo" ReturnType="Collection(ProdGangModel.stpGetGangSupervisorInfo_Result)">
+            <Parameter Name="gangid" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="ThermiteWelding_JsonDataLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JsonData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Source" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RequestType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="Method" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="stpGetGangSupervisorInfo_Result">
+          <Property Type="String" Name="Gang__" Nullable="false" MaxLength="9" />
+          <Property Type="Int32" Name="Gang_Type_Code" Nullable="true" />
+          <Property Type="Int32" Name="Supervisor" Nullable="true" />
+          <Property Type="Int32" Name="Division" Nullable="true" />
+          <Property Type="Int32" Name="Gang_Number" Nullable="true" />
+          <Property Type="Single" Name="Lunch" Nullable="true" />
+          <Property Type="Int16" Name="Men_Authorized" Nullable="true" />
+          <Property Type="DateTime" Name="upsize_ts" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="GangType" Nullable="true" />
+          <Property Type="Int32" Name="RIN" Nullable="true" />
+          <Property Type="Boolean" Name="HardStop" Nullable="true" />
+          <Property Type="Int32" Name="Supervisor_Code" Nullable="true" />
+          <Property Type="String" Name="Supervisor1" Nullable="true" MaxLength="35" />
+          <Property Type="Boolean" Name="Expired" Nullable="true" />
+          <Property Type="String" Name="RacfID" Nullable="true" MaxLength="10" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProdGangModelStoreContainer" CdmEntityContainer="ProdGangEntities">
+          <EntitySetMapping Name="Gang_Type">
+            <EntityTypeMapping TypeName="ProdGangModel.Gang_Type">
+              <MappingFragment StoreEntitySet="Gang_Type">
+                <ScalarProperty Name="Gang_Type_Code" ColumnName="Gang_Type_Code" />
+                <ScalarProperty Name="Gang_Type1" ColumnName="Gang_Type" />
+                <ScalarProperty Name="Gang_Prefix" ColumnName="Gang_Prefix" />
+                <ScalarProperty Name="MPVariance" ColumnName="MPVariance" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gangs">
+            <EntityTypeMapping TypeName="ProdGangModel.Gang">
+              <MappingFragment StoreEntitySet="Gangs">
+                <ScalarProperty Name="Gang__" ColumnName="Gang_#" />
+                <ScalarProperty Name="Gang_Type_Code" ColumnName="Gang_Type_Code" />
+                <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="Gang_Number" ColumnName="Gang_Number" />
+                <ScalarProperty Name="Lunch" ColumnName="Lunch" />
+                <ScalarProperty Name="Men_Authorized" ColumnName="Men_Authorized" />
+                <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+                <ScalarProperty Name="GangType" ColumnName="GangType" />
+                <ScalarProperty Name="RIN" ColumnName="RIN" />
+                <ScalarProperty Name="HardStop" ColumnName="HardStop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThermiteWelding_JsonDataLog">
+            <EntityTypeMapping TypeName="ProdGangModel.ThermiteWelding_JsonDataLog">
+              <MappingFragment StoreEntitySet="ThermiteWelding_JsonDataLog">
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="JsonData" ColumnName="JsonData" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="stpGetGangSupervisorInfo" FunctionName="ProdGangModel.Store.stpGetGangSupervisorInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProdGangModel.stpGetGangSupervisorInfo_Result">
+                <ScalarProperty Name="Gang__" ColumnName="Gang_#" />
+                <ScalarProperty Name="Gang_Type_Code" ColumnName="Gang_Type_Code" />
+                <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="Gang_Number" ColumnName="Gang_Number" />
+                <ScalarProperty Name="Lunch" ColumnName="Lunch" />
+                <ScalarProperty Name="Men_Authorized" ColumnName="Men_Authorized" />
+                <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+                <ScalarProperty Name="GangType" ColumnName="GangType" />
+                <ScalarProperty Name="RIN" ColumnName="RIN" />
+                <ScalarProperty Name="HardStop" ColumnName="HardStop" />
+                <ScalarProperty Name="Supervisor_Code" ColumnName="Supervisor_Code" />
+                <ScalarProperty Name="Supervisor1" ColumnName="Supervisor1" />
+                <ScalarProperty Name="Expired" ColumnName="Expired" />
+                <ScalarProperty Name="RacfID" ColumnName="RacfID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,835 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CHRISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="SSN" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="Contract" Type="bit" Nullable="false" />
+          <Property Name="Dept" Type="int" />
+          <Property Name="First_Name" Type="varchar" MaxLength="20" />
+          <Property Name="First_Init" Type="varchar" MaxLength="1" />
+          <Property Name="Middle_Name" Type="varchar" MaxLength="12" />
+          <Property Name="Last_Name" Type="varchar" MaxLength="20" />
+          <Property Name="Address" Type="varchar" MaxLength="40" />
+          <Property Name="City" Type="varchar" MaxLength="20" />
+          <Property Name="State" Type="varchar" MaxLength="2" />
+          <Property Name="ZIP" Type="varchar" MaxLength="10" />
+          <Property Name="HomePhone" Type="varchar" MaxLength="14" />
+          <Property Name="Unlisted" Type="bit" Nullable="false" />
+          <Property Name="HomePhone_2" Type="varchar" MaxLength="14" />
+          <Property Name="TravelAcctNo" Type="varchar" MaxLength="10" />
+          <Property Name="Birth_Date" Type="datetime" />
+          <Property Name="Hire_Date" Type="datetime" />
+          <Property Name="Sex" Type="bit" Nullable="false" />
+          <Property Name="Marital_Status_ID" Type="int" />
+          <Property Name="MF_Code" Type="int" />
+          <Property Name="RR_Hired" Type="varchar" MaxLength="3" />
+          <Property Name="Term" Type="bit" Nullable="false" />
+          <Property Name="Term_Date" Type="datetime" />
+          <Property Name="Term_ID" Type="int" />
+          <Property Name="Injuries" Type="smallint" />
+          <Property Name="Last_Injured_Date" Type="datetime" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Status_Date" Type="datetime" />
+          <Property Name="Remarks" Type="text" />
+          <Property Name="Remarks_Date" Type="datetime" />
+          <Property Name="Furloughed" Type="bit" Nullable="false" />
+          <Property Name="Operating_Test_Score" Type="real" />
+          <Property Name="Operating_Test_Date" Type="datetime" />
+          <Property Name="FRA_Test_Score" Type="real" />
+          <Property Name="FRA_Test_Date" Type="datetime" />
+          <Property Name="Hazard_Test_Score" Type="real" />
+          <Property Name="Hazard_Test_Date" Type="datetime" />
+          <Property Name="Rule_17" Type="bit" Nullable="false" />
+          <Property Name="Rule_17_Date" Type="datetime" />
+          <Property Name="Payroll_Status" Type="varchar" MaxLength="3" />
+          <Property Name="Frozen" Type="bit" Nullable="false" />
+          <Property Name="Jobcode" Type="varchar" MaxLength="30" />
+          <Property Name="Driver_s_License_Exp_Date" Type="datetime" />
+          <Property Name="Med" Type="datetime" />
+          <Property Name="Annual_Rev_Driv_Rec" Type="datetime" />
+          <Property Name="Violation" Type="datetime" />
+          <Property Name="CRT" Type="bit" Nullable="false" />
+          <Property Name="Cert" Type="bit" Nullable="false" />
+          <Property Name="DRT" Type="bit" Nullable="false" />
+          <Property Name="WED" Type="bit" Nullable="false" />
+          <Property Name="EMP" Type="bit" Nullable="false" />
+          <Property Name="CWE" Type="bit" Nullable="false" />
+          <Property Name="EAP" Type="bit" Nullable="false" />
+          <Property Name="CDL_Class_ID" Type="int" />
+          <Property Name="LOG" Type="bit" Nullable="false" />
+          <Property Name="DRQ" Type="bit" Nullable="false" />
+          <Property Name="Exclude_As_Driver" Type="bit" Nullable="false" />
+          <Property Name="Spouse" Type="varchar" MaxLength="20" />
+          <Property Name="Num_Dependents" Type="smallint" />
+          <Property Name="Spouse_Employer" Type="varchar" MaxLength="50" />
+          <Property Name="Spouse_Position" Type="varchar" MaxLength="30" />
+          <Property Name="Emergency_Phone" Type="varchar" MaxLength="30" />
+          <Property Name="Relatives_with_Company" Type="varchar" MaxLength="200" />
+          <Property Name="School_Circle" Type="int" />
+          <Property Name="School_Name" Type="varchar" MaxLength="50" />
+          <Property Name="School_Year" Type="varchar" MaxLength="4" />
+          <Property Name="School_Degree" Type="varchar" MaxLength="10" />
+          <Property Name="School_Major" Type="varchar" MaxLength="40" />
+          <Property Name="College_Circle" Type="int" />
+          <Property Name="College_Name" Type="varchar" MaxLength="50" />
+          <Property Name="College_Year" Type="varchar" MaxLength="4" />
+          <Property Name="College_Degree" Type="varchar" MaxLength="10" />
+          <Property Name="College_Major" Type="varchar" MaxLength="40" />
+          <Property Name="Graduate_Circle" Type="int" />
+          <Property Name="Graduate_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Graduate_Year" Type="varchar" MaxLength="4" />
+          <Property Name="Graduate_Degree" Type="varchar" MaxLength="10" />
+          <Property Name="Graduate_Major" Type="varchar" MaxLength="40" />
+          <Property Name="Other_Circle" Type="int" />
+          <Property Name="Other_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Other_Year" Type="varchar" MaxLength="4" />
+          <Property Name="Other_Degree" Type="varchar" MaxLength="10" />
+          <Property Name="Other_Major" Type="varchar" MaxLength="30" />
+          <Property Name="Skills" Type="varchar" MaxLength="255" />
+          <Property Name="Military_Branch" Type="varchar" MaxLength="30" />
+          <Property Name="Military_Start" Type="datetime" />
+          <Property Name="Military_End" Type="datetime" />
+          <Property Name="Military_Rank" Type="varchar" MaxLength="30" />
+          <Property Name="Misc" Type="varchar" MaxLength="30" />
+          <Property Name="Union_" Type="varchar" MaxLength="15" />
+          <Property Name="EEO" Type="varchar" MaxLength="15" />
+          <Property Name="Salary" Type="money" />
+          <Property Name="Region" Type="varchar" MaxLength="10" />
+          <Property Name="CS_Status" Type="varchar" MaxLength="10" />
+          <Property Name="CS_PR_Division" Type="varchar" MaxLength="15" />
+          <Property Name="Job_Status" Type="varchar" MaxLength="1" />
+          <Property Name="upsize_ts" Type="datetime" />
+          <Property Name="Feb7" Type="varchar" MaxLength="5" />
+          <Property Name="Feb7Reason" Type="int" />
+          <Property Name="Feb7Date" Type="datetime" />
+          <Property Name="First_Name_Used" Type="varchar" MaxLength="20" />
+          <Property Name="ApplicationForEmployment" Type="datetime" />
+          <Property Name="RoadTestCert" Type="datetime" />
+          <Property Name="WrittenCert" Type="datetime" />
+          <Property Name="DrugTestCert" Type="datetime" />
+          <Property Name="CommercialIDL" Type="datetime" />
+          <Property Name="FMCSafetyBook" Type="datetime" />
+          <Property Name="DriversLicense" Type="varchar" MaxLength="20" />
+          <Property Name="CDLRequired" Type="bit" Nullable="false" />
+          <Property Name="LicenseState" Type="varchar" MaxLength="2" />
+          <Property Name="tmpCRImport" Type="int" />
+          <Property Name="EmployeeID" Type="varchar" MaxLength="50" />
+          <Property Name="FedMotorSafetyBook" Type="int" />
+          <Property Name="DrugTest" Type="int" />
+          <Property Name="Supervisor" Type="int" />
+          <Property Name="FHWYRestricts" Type="varchar" MaxLength="5" />
+          <Property Name="FirstHireDate" Type="datetime" />
+          <Property Name="LogsReceived" Type="datetime" />
+          <Property Name="ConsentForm" Type="int" />
+          <Property Name="HideOfficer" Type="bit" Nullable="false" />
+          <Property Name="SSN_NoDash" Type="varchar" MaxLength="50" />
+          <Property Name="Racf_id" Type="varchar" MaxLength="50" />
+          <Property Name="address_temp" Type="varchar" MaxLength="50" />
+          <Property Name="zip_temp" Type="varchar" MaxLength="50" />
+          <Property Name="NSMA" Type="bit" />
+          <Property Name="ShowInPhoneList" Type="bit" Nullable="false" />
+          <Property Name="PermitOnly" Type="bit" Nullable="false" />
+          <Property Name="AdvancedSignalTraining" Type="bit" Nullable="false" />
+          <Property Name="Personnel_Initials" Type="varchar" MaxLength="3" />
+          <Property Name="QualifiedForRR" Type="bit" />
+          <Property Name="Cell" Type="varchar" MaxLength="13" />
+          <Property Name="Pager" Type="varchar" MaxLength="13" />
+          <Property Name="Static_Fax_Home" Type="varchar" MaxLength="13" />
+          <Property Name="Email" Type="varchar" MaxLength="75" />
+          <Property Name="Vacation_Days" Type="smallint" />
+          <Property Name="Private" Type="bit" />
+          <Property Name="Static_Fax_Office" Type="varchar" MaxLength="13" />
+          <Property Name="EmpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwicCard" Type="bit" />
+          <Property Name="TWICExpDate" Type="datetime" />
+          <Property Name="FMCSA" Type="bit" />
+          <Property Name="PersonalEmail" Type="varchar" MaxLength="75" />
+          <Property Name="Grandfather" Type="bit" />
+          <Property Name="CDLRep" Type="bit" />
+          <Property Name="EmergencyName" Type="varchar" MaxLength="40" />
+          <Property Name="EmergencyPhone1" Type="varchar" MaxLength="13" />
+          <Property Name="EmergencyPhone2" Type="varchar" MaxLength="13" />
+          <Property Name="SAT_Score" Type="real" />
+          <Property Name="SAT_Date" Type="datetime" />
+          <Property Name="Hide" Type="bit" />
+          <Property Name="Position_ID" Type="varchar" MaxLength="15" />
+          <Property Name="JobCode_StartDate" Type="datetime" />
+          <Property Name="MWSKeyLock" Type="int" />
+          <Property Name="MWSKeyLockReceiptedFor" Type="bit" />
+          <Property Name="CWRTrainingDate" Type="datetime" />
+          <Property Name="QualifiedBy" Type="varchar" MaxLength="75" />
+          <Property Name="DateQualified" Type="datetime" />
+          <Property Name="RRCard" Type="bit" />
+          <Property Name="DateRescind" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobCode" Type="varchar" MaxLength="30" />
+          <Property Name="NextJobCode" Type="varchar" MaxLength="30" />
+          <Property Name="Roster" Type="varchar" MaxLength="6" />
+          <Property Name="DPG_Zones" Type="varchar" MaxLength="12" />
+          <Property Name="Gang" Type="varchar" MaxLength="50" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="255" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="ZIP" Type="varchar" MaxLength="20" />
+          <Property Name="Fixed_HQ" Type="bit" />
+          <Property Name="Headquarters" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="15" />
+          <Property Name="Microwave" Type="varchar" MaxLength="15" />
+          <Property Name="Machine_Type" Type="varchar" MaxLength="15" />
+          <Property Name="Machine_Number" Type="varchar" MaxLength="15" />
+          <Property Name="District" Type="varchar" MaxLength="30" />
+          <Property Name="Division" Type="varchar" MaxLength="20" />
+          <Property Name="Start_Time" Type="datetime" />
+          <Property Name="Stop_Time" Type="datetime" />
+          <Property Name="Start_Meal" Type="datetime" />
+          <Property Name="Stop_Meal" Type="datetime" />
+          <Property Name="Salary_Min" Type="money" />
+          <Property Name="Salary_Mid" Type="money" />
+          <Property Name="Salary_Max" Type="money" />
+          <Property Name="Pay_Rate" Type="money" />
+          <Property Name="Pay_Period" Type="varchar" MaxLength="1" />
+          <Property Name="Points" Type="varchar" MaxLength="10" />
+          <Property Name="Cost_Center" Type="int" />
+          <Property Name="Permanent_" Type="bit" />
+          <Property Name="Perm_Date" Type="datetime" />
+          <Property Name="Group_" Type="varchar" MaxLength="3" />
+          <Property Name="Group_Type" Type="smallint" />
+          <Property Name="RM_District" Type="varchar" MaxLength="7" />
+          <Property Name="PR_Ending_Date" Type="datetime" />
+          <Property Name="Supervisor" Type="varchar" MaxLength="3" />
+          <Property Name="Division_Engineer" Type="varchar" MaxLength="3" />
+          <Property Name="Mail" Type="bit" />
+          <Property Name="DPG_Mail" Type="bit" />
+          <Property Name="JP_Number" Type="varchar" MaxLength="5" />
+          <Property Name="Pay_ID" Type="varchar" MaxLength="6" />
+          <Property Name="PagerNumber" Type="varchar" MaxLength="14" />
+          <Property Name="PagerPIN" Type="varchar" MaxLength="6" />
+          <Property Name="RestDays" Type="varchar" MaxLength="30" />
+          <Property Name="StandByDay" Type="varchar" MaxLength="20" />
+          <Property Name="Region" Type="varchar" MaxLength="3" />
+          <Property Name="Vehicle_No" Type="varchar" MaxLength="10" />
+          <Property Name="Job_Desc" Type="text" />
+          <Property Name="Milepost" Type="varchar" MaxLength="50" />
+          <Property Name="Rule_No" Type="varchar" MaxLength="20" />
+          <Property Name="Div" Type="varchar" MaxLength="5" />
+          <Property Name="Dept" Type="varchar" MaxLength="5" />
+          <Property Name="Position" Type="varchar" MaxLength="25" />
+          <Property Name="RateCode" Type="int" />
+          <Property Name="HomeZone" Type="varchar" MaxLength="4" />
+          <Property Name="CDLRequired" Type="bit" />
+          <Property Name="Fax" Type="varchar" MaxLength="15" />
+          <Property Name="TrackSched" Type="text" />
+          <Property Name="NumAsstSuprv" Type="int" />
+          <Property Name="MainLineMiles" Type="float" />
+          <Property Name="YardTrackMiles" Type="float" />
+          <Property Name="TotalMiles" Type="float" />
+          <Property Name="MaxMainLineTotal" Type="float" />
+          <Property Name="SupervisorJobCode" Type="varchar" MaxLength="30" />
+          <Property Name="Division_EngineerJobCode" Type="varchar" MaxLength="30" />
+          <Property Name="CSGangJob" Type="bit" />
+          <Property Name="Chief_Engineer" Type="varchar" MaxLength="3" />
+          <Property Name="OfficerRank" Type="int" />
+          <Property Name="MobilePhone" Type="varchar" MaxLength="15" />
+          <Property Name="CellPhone" Type="varchar" MaxLength="15" />
+          <Property Name="gangnumber" Type="varchar" MaxLength="50" />
+          <Property Name="Driver1026000" Type="bit" />
+          <Property Name="CRMail" Type="bit" />
+          <Property Name="NWMail" Type="bit" />
+          <Property Name="WABMail" Type="bit" />
+          <Property Name="Schedule_Date" Type="datetime" />
+          <Property Name="PayBand" Type="varchar" MaxLength="4" />
+          <Property Name="HmAddrIsMailAddr" Type="bit" Nullable="false" />
+          <Property Name="ProgMaintGangID" Type="int" />
+          <Property Name="PositionID" Type="varchar" MaxLength="8" />
+          <Property Name="JobID" Type="int" Nullable="false" />
+        </EntityType>
+        <Function Name="stpGetJobCodeInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="JobCode" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="CHRISModelStoreContainer">
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CHRISModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="SSN" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contract" Type="Boolean" Nullable="false" />
+          <Property Name="Dept" Type="Int32" />
+          <Property Name="First_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="First_Init" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Middle_Name" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Last_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ZIP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Unlisted" Type="Boolean" Nullable="false" />
+          <Property Name="HomePhone_2" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="TravelAcctNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Birth_Date" Type="DateTime" Precision="3" />
+          <Property Name="Hire_Date" Type="DateTime" Precision="3" />
+          <Property Name="Sex" Type="Boolean" Nullable="false" />
+          <Property Name="Marital_Status_ID" Type="Int32" />
+          <Property Name="MF_Code" Type="Int32" />
+          <Property Name="RR_Hired" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Term" Type="Boolean" Nullable="false" />
+          <Property Name="Term_Date" Type="DateTime" Precision="3" />
+          <Property Name="Term_ID" Type="Int32" />
+          <Property Name="Injuries" Type="Int16" />
+          <Property Name="Last_Injured_Date" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status_Date" Type="DateTime" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks_Date" Type="DateTime" Precision="3" />
+          <Property Name="Furloughed" Type="Boolean" Nullable="false" />
+          <Property Name="Operating_Test_Score" Type="Single" />
+          <Property Name="Operating_Test_Date" Type="DateTime" Precision="3" />
+          <Property Name="FRA_Test_Score" Type="Single" />
+          <Property Name="FRA_Test_Date" Type="DateTime" Precision="3" />
+          <Property Name="Hazard_Test_Score" Type="Single" />
+          <Property Name="Hazard_Test_Date" Type="DateTime" Precision="3" />
+          <Property Name="Rule_17" Type="Boolean" Nullable="false" />
+          <Property Name="Rule_17_Date" Type="DateTime" Precision="3" />
+          <Property Name="Payroll_Status" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Frozen" Type="Boolean" Nullable="false" />
+          <Property Name="Jobcode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Driver_s_License_Exp_Date" Type="DateTime" Precision="3" />
+          <Property Name="Med" Type="DateTime" Precision="3" />
+          <Property Name="Annual_Rev_Driv_Rec" Type="DateTime" Precision="3" />
+          <Property Name="Violation" Type="DateTime" Precision="3" />
+          <Property Name="CRT" Type="Boolean" Nullable="false" />
+          <Property Name="Cert" Type="Boolean" Nullable="false" />
+          <Property Name="DRT" Type="Boolean" Nullable="false" />
+          <Property Name="WED" Type="Boolean" Nullable="false" />
+          <Property Name="EMP" Type="Boolean" Nullable="false" />
+          <Property Name="CWE" Type="Boolean" Nullable="false" />
+          <Property Name="EAP" Type="Boolean" Nullable="false" />
+          <Property Name="CDL_Class_ID" Type="Int32" />
+          <Property Name="LOG" Type="Boolean" Nullable="false" />
+          <Property Name="DRQ" Type="Boolean" Nullable="false" />
+          <Property Name="Exclude_As_Driver" Type="Boolean" Nullable="false" />
+          <Property Name="Spouse" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Num_Dependents" Type="Int16" />
+          <Property Name="Spouse_Employer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Spouse_Position" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Emergency_Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Relatives_with_Company" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="School_Circle" Type="Int32" />
+          <Property Name="School_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="School_Year" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="School_Degree" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="School_Major" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="College_Circle" Type="Int32" />
+          <Property Name="College_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="College_Year" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="College_Degree" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="College_Major" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Graduate_Circle" Type="Int32" />
+          <Property Name="Graduate_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Graduate_Year" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Graduate_Degree" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Graduate_Major" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Other_Circle" Type="Int32" />
+          <Property Name="Other_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Other_Year" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="Other_Degree" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Other_Major" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Skills" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Military_Branch" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Military_Start" Type="DateTime" Precision="3" />
+          <Property Name="Military_End" Type="DateTime" Precision="3" />
+          <Property Name="Military_Rank" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Misc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Union_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EEO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Region" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CS_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CS_PR_Division" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Job_Status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="upsize_ts" Type="DateTime" Precision="3" />
+          <Property Name="Feb7" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Feb7Reason" Type="Int32" />
+          <Property Name="Feb7Date" Type="DateTime" Precision="3" />
+          <Property Name="First_Name_Used" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicationForEmployment" Type="DateTime" Precision="3" />
+          <Property Name="RoadTestCert" Type="DateTime" Precision="3" />
+          <Property Name="WrittenCert" Type="DateTime" Precision="3" />
+          <Property Name="DrugTestCert" Type="DateTime" Precision="3" />
+          <Property Name="CommercialIDL" Type="DateTime" Precision="3" />
+          <Property Name="FMCSafetyBook" Type="DateTime" Precision="3" />
+          <Property Name="DriversLicense" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CDLRequired" Type="Boolean" Nullable="false" />
+          <Property Name="LicenseState" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="tmpCRImport" Type="Int32" />
+          <Property Name="EmployeeID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FedMotorSafetyBook" Type="Int32" />
+          <Property Name="DrugTest" Type="Int32" />
+          <Property Name="Supervisor" Type="Int32" />
+          <Property Name="FHWYRestricts" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="FirstHireDate" Type="DateTime" Precision="3" />
+          <Property Name="LogsReceived" Type="DateTime" Precision="3" />
+          <Property Name="ConsentForm" Type="Int32" />
+          <Property Name="HideOfficer" Type="Boolean" Nullable="false" />
+          <Property Name="SSN_NoDash" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Racf_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="address_temp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zip_temp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NSMA" Type="Boolean" />
+          <Property Name="ShowInPhoneList" Type="Boolean" Nullable="false" />
+          <Property Name="PermitOnly" Type="Boolean" Nullable="false" />
+          <Property Name="AdvancedSignalTraining" Type="Boolean" Nullable="false" />
+          <Property Name="Personnel_Initials" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="QualifiedForRR" Type="Boolean" />
+          <Property Name="Cell" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Pager" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Static_Fax_Home" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="Vacation_Days" Type="Int16" />
+          <Property Name="Private" Type="Boolean" />
+          <Property Name="Static_Fax_Office" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="EmpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TwicCard" Type="Boolean" />
+          <Property Name="TWICExpDate" Type="DateTime" Precision="3" />
+          <Property Name="FMCSA" Type="Boolean" />
+          <Property Name="PersonalEmail" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="Grandfather" Type="Boolean" />
+          <Property Name="CDLRep" Type="Boolean" />
+          <Property Name="EmergencyName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="EmergencyPhone1" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="EmergencyPhone2" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="SAT_Score" Type="Single" />
+          <Property Name="SAT_Date" Type="DateTime" Precision="3" />
+          <Property Name="Hide" Type="Boolean" />
+          <Property Name="Position_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="JobCode_StartDate" Type="DateTime" Precision="3" />
+          <Property Name="MWSKeyLock" Type="Int32" />
+          <Property Name="MWSKeyLockReceiptedFor" Type="Boolean" />
+          <Property Name="CWRTrainingDate" Type="DateTime" Precision="3" />
+          <Property Name="QualifiedBy" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="DateQualified" Type="DateTime" Precision="3" />
+          <Property Name="RRCard" Type="Boolean" />
+          <Property Name="DateRescind" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NextJobCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Roster" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="DPG_Zones" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Gang" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Fixed_HQ" Type="Boolean" />
+          <Property Name="Headquarters" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Microwave" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Machine_Type" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Machine_Number" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="District" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Division" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Start_Time" Type="DateTime" Precision="3" />
+          <Property Name="Stop_Time" Type="DateTime" Precision="3" />
+          <Property Name="Start_Meal" Type="DateTime" Precision="3" />
+          <Property Name="Stop_Meal" Type="DateTime" Precision="3" />
+          <Property Name="Salary_Min" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Salary_Mid" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Salary_Max" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Pay_Rate" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Pay_Period" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Points" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Cost_Center" Type="Int32" />
+          <Property Name="Permanent_" Type="Boolean" />
+          <Property Name="Perm_Date" Type="DateTime" Precision="3" />
+          <Property Name="Group_" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Group_Type" Type="Int16" />
+          <Property Name="RM_District" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="PR_Ending_Date" Type="DateTime" Precision="3" />
+          <Property Name="Supervisor" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Division_Engineer" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="Boolean" />
+          <Property Name="DPG_Mail" Type="Boolean" />
+          <Property Name="JP_Number" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Pay_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="PagerNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="PagerPIN" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="RestDays" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="StandByDay" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Region" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="Vehicle_No" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Job_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Milepost" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rule_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Div" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Dept" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Position" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="RateCode" Type="Int32" />
+          <Property Name="HomeZone" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CDLRequired" Type="Boolean" />
+          <Property Name="Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TrackSched" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NumAsstSuprv" Type="Int32" />
+          <Property Name="MainLineMiles" Type="Double" />
+          <Property Name="YardTrackMiles" Type="Double" />
+          <Property Name="TotalMiles" Type="Double" />
+          <Property Name="MaxMainLineTotal" Type="Double" />
+          <Property Name="SupervisorJobCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Division_EngineerJobCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CSGangJob" Type="Boolean" />
+          <Property Name="Chief_Engineer" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="OfficerRank" Type="Int32" />
+          <Property Name="MobilePhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CellPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="gangnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Driver1026000" Type="Boolean" />
+          <Property Name="CRMail" Type="Boolean" />
+          <Property Name="NWMail" Type="Boolean" />
+          <Property Name="WABMail" Type="Boolean" />
+          <Property Name="Schedule_Date" Type="DateTime" Precision="3" />
+          <Property Name="PayBand" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="HmAddrIsMailAddr" Type="Boolean" Nullable="false" />
+          <Property Name="ProgMaintGangID" Type="Int32" />
+          <Property Name="PositionID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="JobID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CHRISEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Jobs" EntityType="Self.Job" />
+          <FunctionImport Name="stpGetJobCodeInfo" ReturnType="Collection(CHRISModel.stpGetJobCodeInfo_Result)">
+            <Parameter Name="JobCode" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="stpGetJobCodeInfo_Result">
+          <Property Type="Boolean" Name="Contract" Nullable="false" />
+          <Property Type="Int32" Name="Dept" Nullable="true" />
+          <Property Type="String" Name="First_Name" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="First_Init" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="Middle_Name" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="Last_Name" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="JobCode" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="75" />
+          <Property Type="String" Name="Racf_id" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CHRISModelStoreContainer" CdmEntityContainer="CHRISEntities">
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="CHRISModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="Contract" ColumnName="Contract" />
+                <ScalarProperty Name="Dept" ColumnName="Dept" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="First_Init" ColumnName="First_Init" />
+                <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="Unlisted" ColumnName="Unlisted" />
+                <ScalarProperty Name="HomePhone_2" ColumnName="HomePhone_2" />
+                <ScalarProperty Name="TravelAcctNo" ColumnName="TravelAcctNo" />
+                <ScalarProperty Name="Birth_Date" ColumnName="Birth_Date" />
+                <ScalarProperty Name="Hire_Date" ColumnName="Hire_Date" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Marital_Status_ID" ColumnName="Marital_Status_ID" />
+                <ScalarProperty Name="MF_Code" ColumnName="MF_Code" />
+                <ScalarProperty Name="RR_Hired" ColumnName="RR_Hired" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="Term_Date" ColumnName="Term_Date" />
+                <ScalarProperty Name="Term_ID" ColumnName="Term_ID" />
+                <ScalarProperty Name="Injuries" ColumnName="Injuries" />
+                <ScalarProperty Name="Last_Injured_Date" ColumnName="Last_Injured_Date" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Status_Date" ColumnName="Status_Date" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Remarks_Date" ColumnName="Remarks_Date" />
+                <ScalarProperty Name="Furloughed" ColumnName="Furloughed" />
+                <ScalarProperty Name="Operating_Test_Score" ColumnName="Operating_Test_Score" />
+                <ScalarProperty Name="Operating_Test_Date" ColumnName="Operating_Test_Date" />
+                <ScalarProperty Name="FRA_Test_Score" ColumnName="FRA_Test_Score" />
+                <ScalarProperty Name="FRA_Test_Date" ColumnName="FRA_Test_Date" />
+                <ScalarProperty Name="Hazard_Test_Score" ColumnName="Hazard_Test_Score" />
+                <ScalarProperty Name="Hazard_Test_Date" ColumnName="Hazard_Test_Date" />
+                <ScalarProperty Name="Rule_17" ColumnName="Rule_17" />
+                <ScalarProperty Name="Rule_17_Date" ColumnName="Rule_17_Date" />
+                <ScalarProperty Name="Payroll_Status" ColumnName="Payroll_Status" />
+                <ScalarProperty Name="Frozen" ColumnName="Frozen" />
+                <ScalarProperty Name="Jobcode" ColumnName="Jobcode" />
+                <ScalarProperty Name="Driver_s_License_Exp_Date" ColumnName="Driver_s_License_Exp_Date" />
+                <ScalarProperty Name="Med" ColumnName="Med" />
+                <ScalarProperty Name="Annual_Rev_Driv_Rec" ColumnName="Annual_Rev_Driv_Rec" />
+                <ScalarProperty Name="Violation" ColumnName="Violation" />
+                <ScalarProperty Name="CRT" ColumnName="CRT" />
+                <ScalarProperty Name="Cert" ColumnName="Cert" />
+                <ScalarProperty Name="DRT" ColumnName="DRT" />
+                <ScalarProperty Name="WED" ColumnName="WED" />
+                <ScalarProperty Name="EMP" ColumnName="EMP" />
+                <ScalarProperty Name="CWE" ColumnName="CWE" />
+                <ScalarProperty Name="EAP" ColumnName="EAP" />
+                <ScalarProperty Name="CDL_Class_ID" ColumnName="CDL_Class_ID" />
+                <ScalarProperty Name="LOG" ColumnName="LOG" />
+                <ScalarProperty Name="DRQ" ColumnName="DRQ" />
+                <ScalarProperty Name="Exclude_As_Driver" ColumnName="Exclude_As_Driver" />
+                <ScalarProperty Name="Spouse" ColumnName="Spouse" />
+                <ScalarProperty Name="Num_Dependents" ColumnName="Num_Dependents" />
+                <ScalarProperty Name="Spouse_Employer" ColumnName="Spouse_Employer" />
+                <ScalarProperty Name="Spouse_Position" ColumnName="Spouse_Position" />
+                <ScalarProperty Name="Emergency_Phone" ColumnName="Emergency_Phone" />
+                <ScalarProperty Name="Relatives_with_Company" ColumnName="Relatives_with_Company" />
+                <ScalarProperty Name="School_Circle" ColumnName="School_Circle" />
+                <ScalarProperty Name="School_Name" ColumnName="School_Name" />
+                <ScalarProperty Name="School_Year" ColumnName="School_Year" />
+                <ScalarProperty Name="School_Degree" ColumnName="School_Degree" />
+                <ScalarProperty Name="School_Major" ColumnName="School_Major" />
+                <ScalarProperty Name="College_Circle" ColumnName="College_Circle" />
+                <ScalarProperty Name="College_Name" ColumnName="College_Name" />
+                <ScalarProperty Name="College_Year" ColumnName="College_Year" />
+                <ScalarProperty Name="College_Degree" ColumnName="College_Degree" />
+                <ScalarProperty Name="College_Major" ColumnName="College_Major" />
+                <ScalarProperty Name="Graduate_Circle" ColumnName="Graduate_Circle" />
+                <ScalarProperty Name="Graduate_Name" ColumnName="Graduate_Name" />
+                <ScalarProperty Name="Graduate_Year" ColumnName="Graduate_Year" />
+                <ScalarProperty Name="Graduate_Degree" ColumnName="Graduate_Degree" />
+                <ScalarProperty Name="Graduate_Major" ColumnName="Graduate_Major" />
+                <ScalarProperty Name="Other_Circle" ColumnName="Other_Circle" />
+                <ScalarProperty Name="Other_Name" ColumnName="Other_Name" />
+                <ScalarProperty Name="Other_Year" ColumnName="Other_Year" />
+                <ScalarProperty Name="Other_Degree" ColumnName="Other_Degree" />
+                <ScalarProperty Name="Other_Major" ColumnName="Other_Major" />
+                <ScalarProperty Name="Skills" ColumnName="Skills" />
+                <ScalarProperty Name="Military_Branch" ColumnName="Military_Branch" />
+                <ScalarProperty Name="Military_Start" ColumnName="Military_Start" />
+                <ScalarProperty Name="Military_End" ColumnName="Military_End" />
+                <ScalarProperty Name="Military_Rank" ColumnName="Military_Rank" />
+                <ScalarProperty Name="Misc" ColumnName="Misc" />
+                <ScalarProperty Name="Union_" ColumnName="Union_" />
+                <ScalarProperty Name="EEO" ColumnName="EEO" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="CS_Status" ColumnName="CS_Status" />
+                <ScalarProperty Name="CS_PR_Division" ColumnName="CS_PR_Division" />
+                <ScalarProperty Name="Job_Status" ColumnName="Job_Status" />
+                <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+                <ScalarProperty Name="Feb7" ColumnName="Feb7" />
+                <ScalarProperty Name="Feb7Reason" ColumnName="Feb7Reason" />
+                <ScalarProperty Name="Feb7Date" ColumnName="Feb7Date" />
+                <ScalarProperty Name="First_Name_Used" ColumnName="First_Name_Used" />
+                <ScalarProperty Name="ApplicationForEmployment" ColumnName="ApplicationForEmployment" />
+                <ScalarProperty Name="RoadTestCert" ColumnName="RoadTestCert" />
+                <ScalarProperty Name="WrittenCert" ColumnName="WrittenCert" />
+                <ScalarProperty Name="DrugTestCert" ColumnName="DrugTestCert" />
+                <ScalarProperty Name="CommercialIDL" ColumnName="CommercialIDL" />
+                <ScalarProperty Name="FMCSafetyBook" ColumnName="FMCSafetyBook" />
+                <ScalarProperty Name="DriversLicense" ColumnName="DriversLicense" />
+                <ScalarProperty Name="CDLRequired" ColumnName="CDLRequired" />
+                <ScalarProperty Name="LicenseState" ColumnName="LicenseState" />
+                <ScalarProperty Name="tmpCRImport" ColumnName="tmpCRImport" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FedMotorSafetyBook" ColumnName="FedMotorSafetyBook" />
+                <ScalarProperty Name="DrugTest" ColumnName="DrugTest" />
+                <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+                <ScalarProperty Name="FHWYRestricts" ColumnName="FHWYRestricts" />
+                <ScalarProperty Name="FirstHireDate" ColumnName="FirstHireDate" />
+                <ScalarProperty Name="LogsReceived" ColumnName="LogsReceived" />
+                <ScalarProperty Name="ConsentForm" ColumnName="ConsentForm" />
+                <ScalarProperty Name="HideOfficer" ColumnName="HideOfficer" />
+                <ScalarProperty Name="SSN_NoDash" ColumnName="SSN_NoDash" />
+                <ScalarProperty Name="Racf_id" ColumnName="Racf_id" />
+                <ScalarProperty Name="address_temp" ColumnName="address_temp" />
+                <ScalarProperty Name="zip_temp" ColumnName="zip_temp" />
+                <ScalarProperty Name="NSMA" ColumnName="NSMA" />
+                <ScalarProperty Name="ShowInPhoneList" ColumnName="ShowInPhoneList" />
+                <ScalarProperty Name="PermitOnly" ColumnName="PermitOnly" />
+                <ScalarProperty Name="AdvancedSignalTraining" ColumnName="AdvancedSignalTraining" />
+                <ScalarProperty Name="Personnel_Initials" ColumnName="Personnel_Initials" />
+                <ScalarProperty Name="QualifiedForRR" ColumnName="QualifiedForRR" />
+                <ScalarProperty Name="Cell" ColumnName="Cell" />
+                <ScalarProperty Name="Pager" ColumnName="Pager" />
+                <ScalarProperty Name="Static_Fax_Home" ColumnName="Static_Fax_Home" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Vacation_Days" ColumnName="Vacation_Days" />
+                <ScalarProperty Name="Private" ColumnName="Private" />
+                <ScalarProperty Name="Static_Fax_Office" ColumnName="Static_Fax_Office" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="TwicCard" ColumnName="TwicCard" />
+                <ScalarProperty Name="TWICExpDate" ColumnName="TWICExpDate" />
+                <ScalarProperty Name="FMCSA" ColumnName="FMCSA" />
+                <ScalarProperty Name="PersonalEmail" ColumnName="PersonalEmail" />
+                <ScalarProperty Name="Grandfather" ColumnName="Grandfather" />
+                <ScalarProperty Name="CDLRep" ColumnName="CDLRep" />
+                <ScalarProperty Name="EmergencyName" ColumnName="EmergencyName" />
+                <ScalarProperty Name="EmergencyPhone1" ColumnName="EmergencyPhone1" />
+                <ScalarProperty Name="EmergencyPhone2" ColumnName="EmergencyPhone2" />
+                <ScalarProperty Name="SAT_Score" ColumnName="SAT_Score" />
+                <ScalarProperty Name="SAT_Date" ColumnName="SAT_Date" />
+                <ScalarProperty Name="Hide" ColumnName="Hide" />
+                <ScalarProperty Name="Position_ID" ColumnName="Position_ID" />
+                <ScalarProperty Name="JobCode_StartDate" ColumnName="JobCode_StartDate" />
+                <ScalarProperty Name="MWSKeyLock" ColumnName="MWSKeyLock" />
+                <ScalarProperty Name="MWSKeyLockReceiptedFor" ColumnName="MWSKeyLockReceiptedFor" />
+                <ScalarProperty Name="CWRTrainingDate" ColumnName="CWRTrainingDate" />
+                <ScalarProperty Name="QualifiedBy" ColumnName="QualifiedBy" />
+                <ScalarProperty Name="DateQualified" ColumnName="DateQualified" />
+                <ScalarProperty Name="RRCard" ColumnName="RRCard" />
+                <ScalarProperty Name="DateRescind" ColumnName="DateRescind" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="CHRISModel.Job">
+              <MappingFragment StoreEntitySet="Job">
+                <ScalarProperty Name="JobCode" ColumnName="JobCode" />
+                <ScalarProperty Name="NextJobCode" ColumnName="NextJobCode" />
+                <ScalarProperty Name="Roster" ColumnName="Roster" />
+                <ScalarProperty Name="DPG_Zones" ColumnName="DPG_Zones" />
+                <ScalarProperty Name="Gang" ColumnName="Gang" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="Fixed_HQ" ColumnName="Fixed_HQ" />
+                <ScalarProperty Name="Headquarters" ColumnName="Headquarters" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Microwave" ColumnName="Microwave" />
+                <ScalarProperty Name="Machine_Type" ColumnName="Machine_Type" />
+                <ScalarProperty Name="Machine_Number" ColumnName="Machine_Number" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+                <ScalarProperty Name="Stop_Time" ColumnName="Stop_Time" />
+                <ScalarProperty Name="Start_Meal" ColumnName="Start_Meal" />
+                <ScalarProperty Name="Stop_Meal" ColumnName="Stop_Meal" />
+                <ScalarProperty Name="Salary_Min" ColumnName="Salary_Min" />
+                <ScalarProperty Name="Salary_Mid" ColumnName="Salary_Mid" />
+                <ScalarProperty Name="Salary_Max" ColumnName="Salary_Max" />
+                <ScalarProperty Name="Pay_Rate" ColumnName="Pay_Rate" />
+                <ScalarProperty Name="Pay_Period" ColumnName="Pay_Period" />
+                <ScalarProperty Name="Points" ColumnName="Points" />
+                <ScalarProperty Name="Cost_Center" ColumnName="Cost_Center" />
+                <ScalarProperty Name="Permanent_" ColumnName="Permanent_" />
+                <ScalarProperty Name="Perm_Date" ColumnName="Perm_Date" />
+                <ScalarProperty Name="Group_" ColumnName="Group_" />
+                <ScalarProperty Name="Group_Type" ColumnName="Group_Type" />
+                <ScalarProperty Name="RM_District" ColumnName="RM_District" />
+                <ScalarProperty Name="PR_Ending_Date" ColumnName="PR_Ending_Date" />
+                <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+                <ScalarProperty Name="Division_Engineer" ColumnName="Division_Engineer" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="DPG_Mail" ColumnName="DPG_Mail" />
+                <ScalarProperty Name="JP_Number" ColumnName="JP_Number" />
+                <ScalarProperty Name="Pay_ID" ColumnName="Pay_ID" />
+                <ScalarProperty Name="PagerNumber" ColumnName="PagerNumber" />
+                <ScalarProperty Name="PagerPIN" ColumnName="PagerPIN" />
+                <ScalarProperty Name="RestDays" ColumnName="RestDays" />
+                <ScalarProperty Name="StandByDay" ColumnName="StandByDay" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="Vehicle_No" ColumnName="Vehicle_No" />
+                <ScalarProperty Name="Job_Desc" ColumnName="Job_Desc" />
+                <ScalarProperty Name="Milepost" ColumnName="Milepost" />
+                <ScalarProperty Name="Rule_No" ColumnName="Rule_No" />
+                <ScalarProperty Name="Div" ColumnName="Div" />
+                <ScalarProperty Name="Dept" ColumnName="Dept" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="RateCode" ColumnName="RateCode" />
+                <ScalarProperty Name="HomeZone" ColumnName="HomeZone" />
+                <ScalarProperty Name="CDLRequired" ColumnName="CDLRequired" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="TrackSched" ColumnName="TrackSched" />
+                <ScalarProperty Name="NumAsstSuprv" ColumnName="NumAsstSuprv" />
+                <ScalarProperty Name="MainLineMiles" ColumnName="MainLineMiles" />
+                <ScalarProperty Name="YardTrackMiles" ColumnName="YardTrackMiles" />
+                <ScalarProperty Name="TotalMiles" ColumnName="TotalMiles" />
+                <ScalarProperty Name="MaxMainLineTotal" ColumnName="MaxMainLineTotal" />
+                <ScalarProperty Name="SupervisorJobCode" ColumnName="SupervisorJobCode" />
+                <ScalarProperty Name="Division_EngineerJobCode" ColumnName="Division_EngineerJobCode" />
+                <ScalarProperty Name="CSGangJob" ColumnName="CSGangJob" />
+                <ScalarProperty Name="Chief_Engineer" ColumnName="Chief_Engineer" />
+                <ScalarProperty Name="OfficerRank" ColumnName="OfficerRank" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="gangnumber" ColumnName="gangnumber" />
+                <ScalarProperty Name="Driver1026000" ColumnName="Driver1026000" />
+                <ScalarProperty Name="CRMail" ColumnName="CRMail" />
+                <ScalarProperty Name="NWMail" ColumnName="NWMail" />
+                <ScalarProperty Name="WABMail" ColumnName="WABMail" />
+                <ScalarProperty Name="Schedule_Date" ColumnName="Schedule_Date" />
+                <ScalarProperty Name="PayBand" ColumnName="PayBand" />
+                <ScalarProperty Name="HmAddrIsMailAddr" ColumnName="HmAddrIsMailAddr" />
+                <ScalarProperty Name="ProgMaintGangID" ColumnName="ProgMaintGangID" />
+                <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="stpGetJobCodeInfo" FunctionName="CHRISModel.Store.stpGetJobCodeInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CHRISModel.stpGetJobCodeInfo_Result">
+                <ScalarProperty Name="Contract" ColumnName="Contract" />
+                <ScalarProperty Name="Dept" ColumnName="Dept" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="First_Init" ColumnName="First_Init" />
+                <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="JobCode" ColumnName="JobCode" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Racf_id" ColumnName="Racf_id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
